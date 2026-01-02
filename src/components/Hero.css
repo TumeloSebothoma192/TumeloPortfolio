@@ -1,0 +1,65 @@
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background: radial-gradient(800px 500px at 25% 40%, rgba(40,240,122,0.06), transparent 220px), var(--bg);
+  color: #dbeadf;
+}
+.hero-inner{
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  gap:64px;
+  align-items:center;
+  padding:84px 24px;
+}
+.top-logo{position:absolute;left:26px;top:18px;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#0b120f,rgba(40,240,122,0.06));color:var(--accent-2);font-weight:700;border:1px solid rgba(125,243,162,0.08);box-shadow:0 8px 30px rgba(1,1,1,0.6)}
+.hero-left{flex:1}
+.location{display:inline-block;background:rgba(16,24,20,0.6);color:var(--accent-2);padding:8px 12px;border-radius:999px;font-size:13px;margin-bottom:18px;backdrop-filter:blur(4px);border:1px solid rgba(125,243,162,0.06)}
+.title{font-size:64px;color:#ffffff;margin:0 0 12px;line-height:1.02;font-weight:800;letter-spacing:-0.02em}
+.subtitle{color:var(--accent-2);font-size:22px;margin:0 0 18px;font-weight:600}
+.blurb{color:var(--muted);max-width:560px;font-size:15px}
+.hero-cta{margin-top:28px;display:flex;gap:14px}
+.btn{padding:12px 22px;border-radius:999px;border:1px solid rgba(255,255,255,0.06);cursor:pointer;font-weight:600}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#1bd68b);color:#07210c;border:none;box-shadow:0 8px 30px rgba(40,240,122,0.12);transition:transform .18s ease,box-shadow .18s}
+.btn.primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(40,240,122,0.18)}
+.btn.outline{background:transparent;color:var(--accent-2);box-shadow:inset 0 0 0 1px rgba(125,243,162,0.08);border:1px solid rgba(125,243,162,0.06)}
+
+.hero-right{width:420px;display:flex;justify-content:center}
+.cube-wrap{position:relative;width:340px;height:340px;display:flex;align-items:center;justify-content:center;perspective:900px;transform-style:preserve-3d;transition:transform .2s ease}
+.cube{position:relative;width:220px;height:220px;transform-style:preserve-3d;transform:translateZ(-110px);transition:transform .25s cubic-bezier(.2,.9,.2,1)}
+.face{position:absolute;width:220px;height:220px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#dfffe6;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+.face-front{transform:rotateY(0deg) translateZ(110px);font-size:36px}
+.face-back{transform:rotateY(180deg) translateZ(110px);}
+.face-right{transform:rotateY(90deg) translateZ(110px);}
+.face-left{transform:rotateY(-90deg) translateZ(110px);}
+.face-top{transform:rotateX(90deg) translateZ(110px);}
+.face-bottom{transform:rotateX(-90deg) translateZ(110px);}
+.cube-wrap .face-front{background:linear-gradient(135deg,#0f1f14,#07100d);color:#cfefe0}
+
+/* subtle float */
+.cube{animation:floatCube 6s ease-in-out infinite}
+@keyframes floatCube{0%,100%{transform:translateZ(-110px) translateY(0)}50%{transform:translateZ(-110px) translateY(-10px)}}
+
+
+
+@media (max-width:1000px){
+  .hero-inner{flex-direction:column;align-items:flex-start;padding:48px}
+  .hero-right{width:100%;margin-top:20px}
+  .title{font-size:40px}
+  .profile-img{width:100%;height:auto}
+}
+
+/* Bottom center nav pill */
+.site-nav{position:fixed;left:50%;transform:translateX(-50%);bottom:28px;background:rgba(10,12,10,0.6);backdrop-filter:blur(6px);padding:10px 18px;border-radius:28px;display:flex;gap:12px;align-items:center;border:1px solid rgba(125,243,162,0.06);box-shadow:0 8px 30px rgba(1,1,1,0.5)}
+.nav-btn{background:transparent;border:none;color:var(--muted);font-size:18px;padding:8px;border-radius:8px;cursor:pointer}
+.nav-btn:hover{color:var(--accent-2);transform:translateY(-3px)}
+.nav-cta{background:linear-gradient(90deg,var(--accent),#1bd68b);border:none;padding:8px 14px;border-radius:999px;color:#04100a;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(40,240,122,0.12)}
+
+@media (max-width:600px){
+  .top-logo{left:18px;top:12px;width:40px;height:40px}
+  .site-nav{bottom:18px;padding:8px 12px}
+}
+
+
