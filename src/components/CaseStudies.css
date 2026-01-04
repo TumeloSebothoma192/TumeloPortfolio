@@ -1,0 +1,17 @@
+.case-studies{padding:100px 20px}
+.case-studies .inner{max-width:1100px;margin:0 auto}
+.case-studies .section-header{margin-bottom:36px;text-align:left}
+.case-studies .eyebrow{display:inline-block;background:rgba(40,240,122,0.07);color:var(--accent);padding:6px 12px;border-radius:20px;font-size:12px;margin-bottom:8px}
+.case-studies h2{font-size:44px;margin:8px 0 18px;color:var(--accent-2)}
+.case-studies .list{display:flex;flex-direction:column;gap:28px}
+.case-item{display:grid;grid-template-columns:64px 1fr 160px;align-items:center;padding:28px 20px;border-top:1px solid rgba(255,255,255,0.02)}
+.case-item .index{font-size:36px;opacity:0.2}
+.case-item .case-title{font-size:26px;margin:0 0 6px;text-align:left}
+.case-item .case-desc{color:var(--muted);margin:0;font-size:14px;text-align:left}
+.case-item .badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.case-item .tag{background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:12px;font-size:12px;color:var(--muted)}
+.case-item .year{color:var(--muted);font-size:13px;margin-top:8px;text-align:right}
+@media (max-width:800px){
+  .case-item{grid-template-columns:48px 1fr;grid-template-rows:auto auto}
+  .case-item .case-right{grid-column:1/-1;text-align:left;margin-top:8px}
+}

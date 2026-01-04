@@ -1,0 +1,13 @@
+.trusted-brands{padding:100px 20px}
+.trusted-brands .inner{max-width:1100px;margin:0 auto}
+.trusted-brands .center{text-align:center}
+.trusted-brands .eyebrow{display:inline-block;background:rgba(40,240,122,0.07);color:var(--accent);padding:6px 12px;border-radius:20px;font-size:12px;margin-bottom:8px}
+.trusted-brands h2{font-size:44px;color:var(--accent-2);margin:8px 0 10px}
+.trusted-brands .sub{color:var(--muted);margin-bottom:28px}
+.logo-row{display:flex;gap:18px;justify-content:center;align-items:center;padding:30px 0 40px}
+.logo-card{min-width:140px;height:72px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));border-radius:10px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6)}
+.stat-row{display:flex;gap:40px;justify-content:center;margin-top:20px}
+.stat{min-width:120px;text-align:center}
+.stat .num{font-size:32px;color:var(--accent);font-weight:700}
+.stat .label{color:var(--muted);font-size:13px;margin-top:6px}
+@media (max-width:900px){.logo-row{flex-wrap:wrap}.stat-row{flex-direction:row;gap:18px}}

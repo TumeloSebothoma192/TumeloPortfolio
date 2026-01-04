@@ -1,3 +1,6 @@
+/* make sizing predictable and add page padding */
+*, *::before, *::after { box-sizing: border-box; }
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -25,9 +28,11 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column; /* stack app sections vertically */
+  align-items: stretch;
   min-width: 320px;
   min-height: 100vh;
+  padding: 3rem; /* increased page padding for airiness */
 }
 
 h1 {
@@ -65,4 +70,26 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Section spacing for a delicate, airy layout */
+section, .section {
+  position: relative; /* create stacking context so sections sit above backgrounds */
+  z-index: 30;
+  padding-block: clamp(2rem, 5vw, 6rem); /* more airy vertical spacing */
+}
+
+.container, .section .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+@media (max-width: 768px) {
+  section, .section { padding-block: clamp(1.25rem, 3.5vw, 2.5rem); }
+  .container, .section .container { padding-inline: 0.75rem; }
+}
+
+@media (max-width: 600px) {
+  body { padding: 1rem; } /* tighter page padding on small screens */
 }
