@@ -1,17 +1,33 @@
-import React from 'react'
-import './WhatIDo.css'
-import profileSrc from '../assets/profile.svg'
+import React from "react";
+import "./WhatIDo.css";
+import profileSrc from "../assets/pics/savedTJ.png";
 
-export default function WhatIDo(){
+export default function WhatIDo() {
   return (
     <section id="work" className="whatido">
       <div className="whatido-frame">
         <div className="whatido-inner">
           <div className="whatido-left">
-            <h2 className="whatido-title">What I <span>Do</span></h2>
-            <div className="whatido-pill">Driven by Purpose</div>
-            <p className="whatido-text">I create with passion and purpose. For me, design isn't just about making things look beautiful—it's about solving real problems that matter.</p>
-            <p className="whatido-text muted">With over a decade of experience, I focus on deeply understanding people's needs and translating them into intuitive, meaningful, and delightful experiences.</p>
+            <h2 className="whatido-title">
+              What I <span>Study & Build</span>
+            </h2>
+
+            <div className="whatido-pill">
+              Advanced Computer Science & Multimedia Computing
+            </div>
+
+            <p className="whatido-text">
+              I am trained in both Computer Science and Multimedia Computing,
+              with a strong foundation in software development, data structures,
+              algorithms, and interactive systems.
+            </p>
+
+            <p className="whatido-text muted">
+              My academic background spans Data Science, Distributed
+              Programming, Human-Computer Interaction, and Multimedia
+              Technologies, with a growing focus on Machine Learning and
+              data-driven problem solving.
+            </p>
           </div>
 
           <div className="whatido-right">
@@ -21,33 +37,51 @@ export default function WhatIDo(){
           </div>
         </div>
 
-        <h3 className="whatido-section-title">Core Expertise</h3>
+        <h3 className="whatido-section-title">
+          Core Academic & Technical Focus
+        </h3>
+
         <div className="expertise-grid">
           <div className="card">
-            <div className="card-icon">🎨</div>
-            <h4>Product Design</h4>
-            <p>Crafting user-centered interfaces that solve complex problems with simplicity and elegance.</p>
+            <div className="card-icon">🧠</div>
+            <h4>Data Science & Machine Learning</h4>
+            <p>
+              Foundations in data analysis, data-driven decision making, and
+              introductory machine learning concepts applied through academic
+              projects.
+            </p>
           </div>
 
           <div className="card">
-            <div className="card-icon">🧭</div>
-            <h4>Design Strategy</h4>
-            <p>Aligning business goals with user needs to drive measurable product outcomes.</p>
+            <div className="card-icon">💻</div>
+            <h4>Software Engineering</h4>
+            <p>
+              Strong grounding in software development principles,
+              object-oriented programming, service-oriented computing, and
+              integrated software projects.
+            </p>
           </div>
 
           <div className="card">
-            <div className="card-icon">🧩</div>
-            <h4>Design Systems</h4>
-            <p>Building scalable design languages that ensure consistency across platforms.</p>
+            <div className="card-icon">📊</div>
+            <h4>Algorithms & Theoretical CS</h4>
+            <p>
+              Knowledge of data structures, algorithms, distributed programming,
+              and theoretical computer science for efficient and scalable
+              systems.
+            </p>
           </div>
 
           <div className="card">
-            <div className="card-icon">📈</div>
-            <h4>Product Management</h4>
-            <p>Leading cross-functional teams from discovery to delivery with data-driven decisions.</p>
+            <div className="card-icon">🎮</div>
+            <h4>Multimedia & Interactive Systems</h4>
+            <p>
+              Experience with multimedia computing, 3D modelling, animation,
+              games programming, and interactive virtual environments.
+            </p>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
