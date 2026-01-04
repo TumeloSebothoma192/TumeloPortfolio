@@ -59,6 +59,11 @@ body{
   -moz-osx-font-smoothing:grayscale;
 }
 
+/* smooth scrolling for in-page nav */
+html{
+  scroll-behavior: smooth;
+}
+
 .App{min-height:100vh}
 
 /* small utility helpers */
