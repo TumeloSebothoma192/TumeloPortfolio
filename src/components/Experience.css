@@ -1,12 +1,64 @@
-.experience{padding:100px 20px}
-.experience .inner{max-width:1100px;margin:0 auto}
-.experience h2{font-size:44px;color:var(--accent-2);margin-bottom:6px}
-.experience .sub{color:var(--muted);margin-bottom:28px}
-.timeline{position:relative;padding:40px 0}
-.timeline .line{height:2px;background:linear-gradient(90deg, rgba(40,240,122,0.35), transparent);position:absolute;left:10%;right:10%;top:40px}
-.cards{display:flex;gap:22px;justify-content:center;margin-top:40px}
-.exp-card{background:var(--card);padding:20px;border-radius:12px;min-width:200px;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
-.exp-card .badge{background:rgba(40,240,122,0.07);color:var(--accent);padding:8px 10px;border-radius:12px;display:inline-block;margin-bottom:12px;font-size:13px}
-.exp-card h4{margin:0 0 6px}
-.exp-card .org{color:var(--muted);font-size:13px}
-@media (max-width:900px){.cards{flex-direction:column;align-items:center}}
+.stagger-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 48px 60px;
+  margin-top: 60px;
+}
+
+/* Card base */
+.exp-card {
+  background: var(--card);
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
+  position: relative;
+}
+
+/* Vertical offset for stagger effect */
+.exp-card.offset {
+  transform: translateY(48px);
+}
+
+/* Badge */
+.exp-card .badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(40, 240, 122, 0.08);
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.exp-card h4 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.exp-card .org {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+/* Description */
+.exp-card ul.desc {
+  padding-left: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.exp-card ul.desc li {
+  margin-bottom: 0.4rem;
+}
+
+/* Mobile fallback (clean, still staggered slightly) */
+@media (max-width: 900px) {
+  .stagger-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-card.offset {
+    transform: translateY(24px);
+  }
+}

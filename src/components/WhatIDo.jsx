@@ -43,7 +43,6 @@ export default function WhatIDo() {
 
         <div className="expertise-grid">
           <div className="card">
-            <div className="card-icon">🧠</div>
             <h4>Data Science & Machine Learning</h4>
             <p>
               Foundations in data analysis, data-driven decision making, and
@@ -53,7 +52,6 @@ export default function WhatIDo() {
           </div>
 
           <div className="card">
-            <div className="card-icon">💻</div>
             <h4>Software Engineering</h4>
             <p>
               Strong grounding in software development principles,
@@ -63,7 +61,6 @@ export default function WhatIDo() {
           </div>
 
           <div className="card">
-            <div className="card-icon">📊</div>
             <h4>Algorithms & Theoretical CS</h4>
             <p>
               Knowledge of data structures, algorithms, distributed programming,
@@ -73,7 +70,6 @@ export default function WhatIDo() {
           </div>
 
           <div className="card">
-            <div className="card-icon">🎮</div>
             <h4>Multimedia & Interactive Systems</h4>
             <p>
               Experience with multimedia computing, 3D modelling, animation,
