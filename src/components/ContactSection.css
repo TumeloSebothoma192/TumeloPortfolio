@@ -43,39 +43,30 @@
 }
 
 /* CTA button */
+/* primary CTA styling (kept below) */
+
 .contact-card .cta {
   display: inline-block;
   padding: 12px 28px;
   background: var(--accent);
-  color: #fff;
+  color: #000000;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: 0 8px 20px rgba(40, 240, 122, 0.12);
 }
 
 .contact-card .cta:hover {
   background: var(--accent-hover);
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 22px 48px rgba(40, 240, 122, 0.18);
 }
 
-/* Contact links row */
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-  flex-wrap: wrap;
+.contact-card .cta:active {
+  transform: translateY(-1px) scale(0.985);
+  box-shadow: 0 8px 20px rgba(40, 240, 122, 0.12);
 }
-
-/* Email */
-.contact-links .email {
-  font-size: 14px;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
 .contact-links .email:hover {
   text-decoration: underline;
 }

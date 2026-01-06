@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import "../App.css";
 import "./Hero.css";
-import profileSrc from "../assets/pics/Tumelo12.png";
+import profileSrc from "../assets/pics/Tumelo12.jpg";
 
 export default function Hero() {
   const stackRef = useRef(null);
@@ -28,7 +28,12 @@ export default function Hero() {
         <div className="hero-inner">
           <div className="hero-left">
             <div className="location">Pretoria • South Africa</div>
-            <h1 className="title">Hey, I’m Tumelo</h1>
+            <h1
+              className="title neon-text neon-animate"
+              data-neon="Hey, I’m Tumelo"
+            >
+              Hey, I’m Tumelo
+            </h1>
             <p className="subtitle">
               Designing intelligent experiences for modern users.
             </p>
@@ -39,8 +44,11 @@ export default function Hero() {
               <a className="btn primary" href="/resume.pdf" download>
                 View Resume
               </a>
-              <a className="btn outline" href="mailto:hello@example.com">
-                Let’s Talk
+              <a
+                className="btn outline cta-pulse"
+                href="mailto:jeremiahmakgoka24@gmail.com"
+              >
+                Let's Talk
               </a>
             </div>
           </div>

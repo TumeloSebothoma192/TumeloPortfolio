@@ -1,33 +1,42 @@
-import React from 'react'
-import './CommunityImpact.css'
+import React from "react";
+import "./CommunityImpact.css";
 
-export default function CommunityImpact(){
-  const items = [
-    {title:'Design Mentorship', desc:'350+ Hours | 50+ Mentees'},
-    {title:'Speaking Engagements', desc:'3 Talks'},
-    {title:'Community Meetups', desc:'Monthly Events'}
-  ]
-
+export default function CommunityImpact() {
   return (
     <section id="community" className="section community">
       <div className="inner">
         <div className="section-header">
-          <h2>Community Impact</h2>
-          <p className="sub">Passionate about sharing knowledge, mentoring emerging designers, and contributing to the growth of the design ecosystem</p>
+          <h2 className="neon-text neon-animate" data-neon="Community Impact">
+            Community Impact
+          </h2>
+          <p className="sub">
+            I believe in empowering others. Sharing knowledge and guiding
+            emerging designers is how I contribute to a stronger, more creative
+            community.
+          </p>
         </div>
 
-        <div className="grid">
-          {items.map((it,i)=> (
-            <div className="card" key={i}>
-              <div className="media" />
-              <div className="card-body">
-                <h4>{it.title}</h4>
-                <p className="muted">{it.desc}</p>
-              </div>
+        <div className="motivation">
+          <div className="motivation-inner">
+            <h3>Why I Give Back</h3>
+            <p className="muted">
+              Every mentorship, talk, and meetup is a chance to inspire growth
+              and spark innovation. Teaching others deepens my own practice and
+              helps build a more collaborative design culture.
+            </p>
+
+            <div className="quotes">
+              <blockquote>
+                "Teaching others is the best way to learn yourself."
+              </blockquote>
+              <blockquote>
+                "Great designers don’t just create, they uplift others around
+                them."
+              </blockquote>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,4 +1,3 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -42,31 +41,303 @@
   color: #888;
 }
 
-:root{
-  --bg:#070807;
-  --muted:#9aa89a;
-  --accent:#28f07a;
-  --accent-2:#7df3a2;
-  --card:#0b0f0e;
-  --glass: rgba(255,255,255,0.03);
+:root {
+  --bg: #070807;
+  --muted: #9aa89a;
+  --accent: #28f07a;
+  --accent-2: #7df3a2;
+  /* neon color (rgb) for animated glows */
+  --neon-rgb: 40, 240, 122;
+  --card: rgba(11, 15, 14, 0.62);
+  --glass: rgba(255, 255, 255, 0.03);
 }
 
-body{
-  background:var(--bg);
+body {
+  background: var(--bg);
   color: #dbeadf;
   font-family: Inter, Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Neon underline glow for main headings */
+h1,
+.title {
+  position: relative;
+  display: inline-block;
+}
+h1::after,
+.title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  filter: blur(8px);
+  opacity: 0.9;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Responsive base: scale typography and make media fluid */
+html {
+  font-size: 16px;
+}
+@media (min-width: 1400px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media (max-width: 720px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Neon text effect for key headings */
+.neon-text {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 10px rgba(var(--neon-rgb), 0.18),
+    0 0 28px rgba(var(--neon-rgb), 0.12);
+}
+.neon-text::before,
+.neon-text::after {
+  content: attr(data-neon);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  opacity: 0.9;
+  filter: blur(14px);
+  pointer-events: none;
+}
+.neon-text::before {
+  color: transparent;
+  text-shadow: 0 0 22px rgba(var(--neon-rgb), 0.22);
+}
+.neon-text::after {
+  color: transparent;
+  text-shadow: 0 0 44px rgba(var(--neon-rgb), 0.14);
+}
+
+/* subtle pulse animation for neon headings */
+.neon-animate {
+  animation: neonPulse 3.2s ease-in-out infinite;
+}
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 8px rgba(var(--neon-rgb), 0.1),
+      0 0 22px rgba(var(--neon-rgb), 0.06);
+  }
+  50% {
+    text-shadow: 0 0 18px rgba(var(--neon-rgb), 0.26),
+      0 0 44px rgba(var(--neon-rgb), 0.14);
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(var(--neon-rgb), 0.1),
+      0 0 22px rgba(var(--neon-rgb), 0.06);
+  }
+}
+
+/* make section inner containers responsive */
+.section .inner {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Pulse animation for mailto CTAs to encourage clicks */
+.cta-pulse {
+  animation: pulseCTA 2.8s ease-in-out infinite;
+  box-shadow: 0 10px 28px rgba(40, 240, 122, 0.12);
+}
+
+@keyframes pulseCTA {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 8px 20px rgba(40, 240, 122, 0.1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 26px 58px rgba(40, 240, 122, 0.18);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 8px 20px rgba(40, 240, 122, 0.1);
+  }
 }
 
 /* smooth scrolling for in-page nav */
-html{
+html {
   scroll-behavior: smooth;
 }
 
-.App{min-height:100vh}
+.App {
+  min-height: 100vh;
+}
+
+/* Small-screen optimizations: hide heavy sections and reduce visual noise */
+@media (max-width: 480px) {
+  .trusted-brands,
+  .testimonials {
+    display: none !important;
+  }
+
+  /* Reduce nav footprint on very small screens */
+  .portfolio-nav {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive breakpoints (mobile-first)
+   - Small Mobile: 320px - 480px (base styles)
+   - Large Phones / Portrait Tablets: 481px - 768px
+   - Tablets Landscape / Small Laptops: 769px - 1024px
+   - Laptops / Desktops: 1025px - 1200px
+   - Large / XL Desktops: 1201px+
+*/
+
+@media (min-width: 481px) {
+  html {
+    font-size: 15.5px;
+  }
+  /* show hero right on larger phones and portrait tablets */
+  .hero-right {
+    display: block;
+  }
+  .hero-cta {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 769px) {
+  html {
+    font-size: 16px;
+  }
+  .hero-inner {
+    flex-direction: row;
+    align-items: center;
+    padding: 120px 0;
+  }
+  .hero-left {
+    text-align: left;
+  }
+  .trusted-brands,
+  .testimonials {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 17px;
+  }
+  .hero-left {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 1201px) {
+  html {
+    font-size: 18px;
+  }
+  .hero-frame {
+    max-width: 1400px;
+    padding: 0 28px;
+  }
+}
+
+/* Global responsive helpers for common UI across components */
+@media (min-width: 481px) {
+  /* Large phones / portrait tablets */
+  .btn {
+    padding: 12px 20px;
+  }
+  .title {
+    font-size: clamp(28px, 5.6vw, 48px);
+  }
+  .section .inner {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  .nav-list {
+    gap: 12px;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Tablets landscape / small laptops */
+  .btn {
+    padding: 12px 22px;
+  }
+  .title {
+    font-size: clamp(34px, 5.2vw, 56px);
+  }
+  .hero-inner {
+    gap: 48px;
+    padding: 100px 0;
+  }
+  .hero-right {
+    display: flex !important;
+  }
+  .portfolio-nav .nav-list {
+    display: flex;
+    gap: 14px;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* Laptops / Desktops */
+  .btn {
+    padding: 14px 26px;
+  }
+  .title {
+    font-size: clamp(40px, 5vw, 64px);
+  }
+  .hero-left {
+    max-width: 680px;
+  }
+  .section .inner {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1400px) {
+  /* Extra large screens */
+  .btn {
+    padding: 14px 30px;
+  }
+  .hero-frame {
+    max-width: 1600px;
+  }
+}
+
+/* Mid-size tweaks for tablet: ensure hero CTAs align nicely */
+@media (max-width: 1000px) and (min-width: 721px) {
+  .hero-left {
+    text-align: left;
+  }
+  .hero-cta {
+    justify-content: center;
+  }
+}
 
 /* small utility helpers */
-.visually-hidden{position:absolute;left:-9999px}
-
-
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+}

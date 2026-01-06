@@ -1,35 +1,147 @@
-.whatido{position:relative;z-index:25;padding:80px 20px}
-.whatido-frame{max-width:1200px;margin:0 auto}
-.whatido-inner{display:flex;gap:40px;align-items:flex-start;justify-content:space-between}
-.whatido-left{flex:1;max-width:640px}
-.whatido-title{font-size:44px;margin:0 0 12px;font-weight:800}
-.whatido-title span{color:var(--accent)}
-.whatido-pill{display:inline-block;background:rgba(16,24,20,0.6);color:var(--accent-2);padding:8px 12px;border-radius:999px;font-size:13px;margin:8px 0 18px;border:1px solid rgba(125,243,162,0.06)}
-.whatido-text{color:var(--muted);line-height:1.6;margin:0 0 14px}
-.whatido-text.muted{opacity:0.9}
-
-.whatido-right{width:360px;display:flex;justify-content:center}
-.whatido-photo{width:320px;height:320px;border-radius:12px;overflow:hidden;border:2px solid rgba(40,240,122,0.08);box-shadow:0 20px 60px rgba(2,6,8,0.6);background:linear-gradient(135deg,#071210,#072018)}
-.whatido-img{width:100%;height:100%;object-fit:cover;display:block}
-
-.whatido-section-title{margin-top:48px;font-size:22px;color:#ffffff}
-.expertise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px}
-.card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 10px 30px rgba(0,0,0,0.5);min-height:140px}
-.card-icon{width:44px;height:44px;border-radius:10px;background:rgba(10,18,12,0.6);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
-.card h4{margin:0 0 8px;font-size:16px}
-.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
-
-@media (max-width:1000px){
-  .whatido-inner{flex-direction:column;align-items:center;text-align:left}
-  .whatido-right{width:100%;order:2;margin-top:18px}
-  .whatido-photo{width:100%;height:300px;border-radius:10px}
-  .expertise-grid{grid-template-columns:repeat(2,1fr)}
+.whatido {
+  position: relative;
+  z-index: 25;
+  padding: 80px 20px;
+}
+.whatido-frame {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.whatido-inner {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.whatido-left {
+  flex: 1;
+  max-width: 640px;
+}
+.whatido-title {
+  font-size: 44px;
+  margin: 0 0 12px;
+  font-weight: 800;
+}
+.whatido-title span {
+  color: var(--accent);
+}
+.whatido-pill {
+  display: inline-block;
+  background: rgba(16, 24, 20, 0.6);
+  color: var(--accent-2);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  margin: 8px 0 18px;
+  border: 1px solid rgba(125, 243, 162, 0.06);
+}
+.whatido-text {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+.whatido-text.muted {
+  opacity: 0.9;
 }
 
-@media (max-width:480px){
-  .whatido{padding:40px 14px}
-  .whatido-title{font-size:28px}
-  .whatido-pill{font-size:12px;padding:6px 10px}
-  .expertise-grid{grid-template-columns:1fr;gap:12px}
-  .card{min-height:120px}
+.whatido-right {
+  width: 360px;
+  display: flex;
+  justify-content: center;
+}
+.whatido-photo {
+  width: 320px;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(40, 240, 122, 0.08);
+  box-shadow: 0 20px 60px rgba(2, 6, 8, 0.6);
+  background: linear-gradient(135deg, #071210, #072018);
+}
+.whatido-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.whatido-section-title {
+  margin-top: 48px;
+  font-size: 22px;
+  color: #ffffff;
+}
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  min-height: 140px;
+}
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(10, 18, 12, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.card h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  .whatido-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+  .whatido-right {
+    width: 100%;
+    order: 2;
+    margin-top: 18px;
+  }
+  .whatido-photo {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+  }
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .whatido {
+    padding: 40px 14px;
+  }
+  .whatido-title {
+    font-size: 28px;
+  }
+  .whatido-pill {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .card {
+    min-height: 120px;
+  }
 }

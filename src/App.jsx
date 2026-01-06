@@ -6,7 +6,7 @@ import Nav from "./components/Nav";
 import WhatIDo from "./components/WhatIDo";
 import Experience from "./components/Experience";
 import TrustedBrands from "./components/TrustedBrands";
-import CaseStudies from "./components/CaseStudies";
+import CaseStudies from "./components/ProjectsCarousel";
 import CommunityImpact from "./components/CommunityImpact";
 import Testimonials from "./components/Testimonials";
 import ContactSection from "./components/ContactSection";

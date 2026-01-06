@@ -8,7 +8,10 @@ export default function WhatIDo() {
       <div className="whatido-frame">
         <div className="whatido-inner">
           <div className="whatido-left">
-            <h2 className="whatido-title">
+            <h2
+              className="whatido-title neon-text neon-animate"
+              data-neon="What I Study & Build"
+            >
               What I <span>Study & Build</span>
             </h2>
 

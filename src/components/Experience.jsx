@@ -47,7 +47,9 @@ export default function Experience() {
     <section id="experience" className="experience">
       <div className="inner">
         <div className="section-header">
-          <h2>Experience</h2>
+          <h2 className="neon-text neon-animate" data-neon="Experience">
+            Experience
+          </h2>
           <p className="sub">Academic, technical & project-based experience</p>
         </div>
 

@@ -14,8 +14,11 @@ export default function ContactSection() {
             just exchange ideas, I’m all ears. Let’s collaborate and create
             something impactful.
           </p>
-          <a className="cta" href="mailto:jeremiahmakgoka24@gmail.com">
-            Send me a Message
+          <a
+            className="cta cta-pulse"
+            href="mailto:jeremiahmakgoka24@gmail.com"
+          >
+            Let's Talk
           </a>
         </div>
 

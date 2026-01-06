@@ -7,11 +7,14 @@
 
 /* Card base */
 .exp-card {
+  /* use global card variable for consistent translucency */
   background: var(--card);
   padding: 22px;
   border-radius: 14px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
   position: relative;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 /* Vertical offset for stagger effect */
