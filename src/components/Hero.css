@@ -26,9 +26,16 @@
 .hero-inner {
   width: 100%;
   display: flex;
-  gap: 48px;
+  gap: clamp(16px, 4vw, 32px);
   align-items: center;
-  padding: 120px 0; /* increased vertical padding for a more airy hero */
+  padding: clamp(40px, 8vw, 80px) 0;
+}
+@media (max-width: 1000px) {
+  .hero-inner {
+    flex-direction: column;
+    gap: clamp(24px, 5vw, 32px);
+    padding: clamp(48px, 6vw, 64px) 0;
+  }
 }
 .hero-inner {
   position: relative;
@@ -107,12 +114,11 @@
   font-size: clamp(13px, 3.6vw, 15px);
 }
 .hero-cta {
-  margin-top: 28px;
+  margin-top: clamp(12px, 3vw, 20px);
   display: flex;
-  gap: 14px;
-  justify-content: flex-start; /* align CTAs under text on wider screens */
-}
-.hero-cta {
+  gap: clamp(8px, 2vw, 12px);
+  justify-content: flex-start;
+  flex-wrap: wrap;
   width: 100%;
   align-items: center;
 }
@@ -167,10 +173,17 @@
 }
 
 .hero-right {
-  flex: 0 0 360px;
-  max-width: 520px;
+  flex: 0 0 clamp(240px, 50vw, 320px);
+  max-width: clamp(280px, 60vw, 480px);
   display: flex;
   justify-content: center;
+  width: 100%;
+}
+@media (max-width: 1000px) {
+  .hero-right {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 .profile-card-wrap {
   z-index: 26;
@@ -178,8 +191,9 @@
 }
 .profile-card-wrap {
   position: relative;
-  width: 420px;
-  height: 420px;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -188,8 +202,9 @@
 }
 .profile-card {
   position: relative;
-  width: 320px;
-  height: 360px;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
   border-radius: 18px;
   padding: 18px;
   background: linear-gradient(
@@ -206,8 +221,9 @@
 }
 .card-frame {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
   border-radius: 16px;
   overflow: hidden;
   border: 2px solid rgba(20, 200, 110, 0.14);
@@ -230,8 +246,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 420px;
-  height: 420px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
   background: radial-gradient(
     circle at 40% 35%,
@@ -294,17 +310,13 @@
   .hero-inner {
     flex-direction: column;
     align-items: flex-start;
-    padding: 72px;
-    gap: 28px;
+    padding: 48px 16px;
+    gap: 24px;
   }
   .hero-right {
     width: 100%;
     margin-top: 20px;
-  }
-
-  /* hide right profile card on narrower layouts to improve scroll and clicks */
-  .hero-right {
-    display: none;
+    display: block; /* stack the right column under text instead of hiding it */
   }
   .title {
     font-size: 40px;
@@ -684,5 +696,120 @@
   }
   100% {
     box-shadow: 0 8px 20px rgba(40, 240, 122, 0.1);
+  }
+}
+
+/* Strong mobile overrides to ensure stacking and fluid widths */
+@media (max-width: 520px) {
+  .hero-frame,
+  .container {
+    width: 100%;
+    padding-inline: 12px;
+  }
+  .hero-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 14px !important;
+  }
+  .hero-left,
+  .hero-right {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .hero-right {
+    order: 2 !important;
+    margin-top: 8px !important;
+  }
+  .hero-cta {
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .profile-card,
+  .card-frame,
+  .profile-card-wrap {
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+  }
+  .profile-img,
+  img,
+  .whatido-img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .title,
+  .subtitle,
+  .blurb {
+    text-align: center !important;
+  }
+}
+
+/* Additional small-screen fallbacks to force stacking and fluid media */
+@media (max-width: 520px) {
+  .hero-frame {
+    padding: 0 12px;
+  }
+  .hero-inner {
+    flex-direction: column;
+    gap: 16px;
+    padding: 28px 0;
+  }
+  .hero-left,
+  .hero-right {
+    max-width: 100%;
+    width: 100%;
+  }
+  .hero-right {
+    order: 2;
+    display: flex;
+    justify-content: center;
+  }
+  .profile-card {
+    width: 86%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .hero-cta {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .title {
+    font-size: clamp(22px, 7vw, 36px);
+  }
+  .blurb {
+    max-width: 100%;
+    font-size: 14px;
+  }
+  .profile-img img,
+  .profile-card img,
+  .card-frame img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 45vh !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-inner {
+    padding: 18px 0;
+    gap: 12px;
+  }
+  .top-logo {
+    left: 12px;
+    top: 10px;
+    width: 38px;
+    height: 38px;
+  }
+  .badge {
+    transform: scale(0.92);
+  }
+  .hero-cta .btn {
+    padding: 8px 12px;
+    font-size: 13px;
   }
 }

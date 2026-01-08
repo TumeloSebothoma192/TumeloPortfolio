@@ -1,16 +1,19 @@
 .stagger-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
-  gap: 48px 60px;
-  margin-top: 60px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(240px, 100%, 280px), 1fr)
+  );
+  gap: clamp(24px, 4vw, 48px) clamp(20px, 3vw, 60px);
+  margin-top: clamp(32px, 6vw, 60px);
 }
 
 /* Card base */
 .exp-card {
   /* use global card variable for consistent translucency */
   background: var(--card);
-  padding: 22px;
-  border-radius: 14px;
+  padding: clamp(16px, 3vw, 22px);
+  border-radius: clamp(10px, 2vw, 14px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
   position: relative;
   backdrop-filter: blur(6px);
@@ -19,27 +22,27 @@
 
 /* Vertical offset for stagger effect */
 .exp-card.offset {
-  transform: translateY(48px);
+  transform: translateY(clamp(20px, 3vw, 48px));
 }
 
 /* Badge */
 .exp-card .badge {
   display: inline-block;
-  font-size: 12px;
-  padding: 6px 10px;
+  font-size: clamp(11px, 2.5vw, 12px);
+  padding: clamp(4px, 1vw, 6px) clamp(8px, 1.5vw, 10px);
   border-radius: 999px;
   background: rgba(40, 240, 122, 0.08);
   color: var(--accent);
-  margin-bottom: 10px;
+  margin-bottom: clamp(8px, 1.5vw, 10px);
 }
 
 .exp-card h4 {
   margin: 0 0 6px;
-  font-size: 18px;
+  font-size: clamp(15px, 3vw, 18px);
 }
 
 .exp-card .org {
-  font-size: 13px;
+  font-size: clamp(12px, 2.5vw, 13px);
   color: var(--muted);
   margin-bottom: 10px;
 }
@@ -47,7 +50,7 @@
 /* Description */
 .exp-card ul.desc {
   padding-left: 1rem;
-  font-size: 0.9rem;
+  font-size: clamp(12px, 2.5vw, 14px);
   line-height: 1.5;
 }
 
@@ -59,9 +62,35 @@
 @media (max-width: 900px) {
   .stagger-grid {
     grid-template-columns: 1fr;
+    gap: clamp(16px, 3vw, 24px);
   }
 
   .exp-card.offset {
-    transform: translateY(24px);
+    transform: translateY(clamp(12px, 2vw, 24px));
+  }
+}
+
+@media (max-width: 480px) {
+  .stagger-grid {
+    gap: clamp(12px, 2vw, 18px);
+    margin-top: clamp(24px, 4vw, 36px);
+  }
+  .exp-card {
+    padding: clamp(12px, 2.5vw, 16px);
+  }
+  .exp-card h4 {
+    font-size: clamp(14px, 2.8vw, 16px);
+  }
+  .exp-card ul.desc {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .exp-card {
+    padding: 12px;
+  }
+  .exp-card h4 {
+    font-size: 14px;
   }
 }

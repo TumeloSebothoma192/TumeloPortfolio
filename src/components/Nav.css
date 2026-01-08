@@ -106,3 +106,24 @@
     font-size: 13px;
   }
 }
+
+/* extra small device tweaks */
+@media (max-width: 320px) {
+  .portfolio-nav {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+  }
+  .nav-list {
+    padding: 4px 6px;
+    gap: 6px;
+  }
+  .nav-item {
+    width: 30px;
+    height: 30px;
+  }
+  .nav-cta {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}

@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
@@ -83,16 +83,21 @@ h1::after,
 
 /* Responsive base: scale typography and make media fluid */
 html {
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 18px);
 }
-@media (min-width: 1400px) {
+@media (max-width: 768px) {
   html {
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 16px);
   }
 }
-@media (max-width: 720px) {
+@media (max-width: 480px) {
   html {
-    font-size: 15px;
+    font-size: clamp(13px, 3.5vw, 15px);
+  }
+}
+@media (max-width: 360px) {
+  html {
+    font-size: 13px;
   }
 }
 
@@ -186,6 +191,37 @@ html {
 
 .App {
   min-height: 100vh;
+}
+
+/* App-level small-screen adjustments */
+@media (max-width: 1024px) {
+  #root {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+}
+@media (max-width: 768px) {
+  #root {
+    padding: 0 10px;
+  }
+}
+@media (max-width: 480px) {
+  #root {
+    padding-inline: 8px;
+  }
+  .logo {
+    height: 4.5em;
+    padding: 1em;
+  }
+  h1,
+  .title {
+    font-size: clamp(18px, 5.5vw, 28px);
+  }
+}
+@media (max-width: 360px) {
+  #root {
+    padding: 0 6px;
+  }
 }
 
 /* small utility helpers */

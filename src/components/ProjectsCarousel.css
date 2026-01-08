@@ -1,10 +1,11 @@
 .projects-section {
-  padding: 80px 20px;
+  padding: clamp(48px, 8vw, 80px) clamp(12px, 4vw, 20px);
 }
 
 .projects-section h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: clamp(20px, 4vw, 30px);
+  font-size: clamp(28px, 6vw, 44px);
 }
 
 /* Wrapper MUST allow overflow */
@@ -16,8 +17,8 @@
 /* ACTUAL scroll container */
 .carousel {
   display: flex;
-  gap: 40px;
-  padding: 30px 10vw;
+  gap: clamp(20px, 4vw, 40px);
+  padding: clamp(16px, 3vw, 30px) clamp(6vw, 4%, 10vw);
 
   overflow-x: auto;
   overflow-y: hidden;
@@ -31,14 +32,14 @@
 }
 
 .carousel-card {
-  min-width: 320px;
-  height: 220px;
+  min-width: clamp(220px, 60vw, 320px);
+  height: clamp(160px, 40vw, 220px);
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  border-radius: 18px;
+  border-radius: clamp(12px, 2vw, 18px);
   position: relative;
   overflow: hidden;
 
@@ -50,6 +51,69 @@
 
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 0.35s ease;
+}
+
+/* responsive tweaks for narrow viewports */
+@media (max-width: 900px) {
+  .carousel {
+    padding: clamp(14px, 2.5vw, 20px) clamp(4vw, 3%, 8vw);
+    gap: clamp(16px, 3vw, 24px);
+  }
+  .carousel-card {
+    min-width: clamp(200px, 55vw, 280px);
+    height: clamp(150px, 35vw, 200px);
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel {
+    padding: clamp(12px, 2vw, 16px) clamp(3vw, 2%, 6vw);
+    gap: clamp(12px, 2.5vw, 18px);
+  }
+  .carousel-card {
+    min-width: clamp(180px, 50vw, 240px);
+    height: clamp(140px, 30vw, 180px);
+    border-radius: clamp(10px, 1.5vw, 12px);
+  }
+  .carousel-card h3 {
+    font-size: clamp(14px, 3vw, 18px);
+  }
+  .carousel-card span {
+    font-size: clamp(11px, 2.5vw, 13px);
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    padding: clamp(10px, 1.5vw, 14px) clamp(2vw, 1.5%, 4vw);
+    gap: clamp(10px, 2vw, 14px);
+  }
+  .carousel-card {
+    min-width: clamp(160px, 45vw, 220px);
+    height: clamp(130px, 28vw, 160px);
+    border-radius: 10px;
+  }
+  .carousel-wrapper {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .carousel-card h3 {
+    font-size: clamp(13px, 2.8vw, 16px);
+  }
+  .carousel-card span {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .carousel {
+    padding: 8px 2vw;
+    gap: 8px;
+  }
+  .carousel-card {
+    min-width: clamp(140px, 40vw, 180px);
+    height: clamp(120px, 25vw, 140px);
+  }
 }
 
 /* Dark overlay for readability */
