@@ -632,18 +632,6 @@
   padding: 8px 14px;
   border-radius: 999px;
   color: #04100a;
-
-  @keyframes glowPulse {
-    0% {
-      box-shadow: 0 8px 20px rgba(40, 240, 122, 0.1);
-    }
-    50% {
-      box-shadow: 0 18px 42px rgba(40, 240, 122, 0.18);
-    }
-    100% {
-      box-shadow: 0 8px 20px rgba(40, 240, 122, 0.1);
-    }
-  }
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 8px 30px rgba(40, 240, 122, 0.12);
@@ -670,4 +658,16 @@
   z-index: 79;
   pointer-events: none;
   mix-blend-mode: screen;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 8px 20px rgba(40, 240, 122, 0.1);
+  }
+  50% {
+    box-shadow: 0 18px 42px rgba(40, 240, 122, 0.18);
+  }
+  100% {
+    box-shadow: 0 8px 20px rgba(40, 240, 122, 0.1);
+  }
 }
