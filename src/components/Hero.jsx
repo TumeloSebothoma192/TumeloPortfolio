@@ -1,7 +1,10 @@
 import React, { useState, useRef } from "react";
 import "../App.css";
 import "./Hero.css";
-import profileSrc from "../assets/pics/Tumelo12.webp";
+import profile480 from "../assets/pics/Tumelo12-480.webp";
+import profile768 from "../assets/pics/Tumelo12-768.webp";
+import profile1200 from "../assets/pics/Tumelo12-1200.webp";
+import profileFallback from "../assets/pics/Tumelo12.jpg";
 
 export default function Hero() {
   const stackRef = useRef(null);
@@ -67,11 +70,14 @@ export default function Hero() {
             >
               <div className="profile-card">
                 <div className="card-frame">
-                  <img
-                    src={profileSrc}
-                    alt="Tumelo Sebothoma"
-                    className="profile-img"
-                  />
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcSet={`${profile480} 480w, ${profile768} 768w, ${profile1200} 1200w`}
+                      sizes="(max-width: 768px) 80vw, 300px"
+                    />
+                    <img src={profileFallback} alt="Tumelo Sebothoma" className="profile-img" />
+                  </picture>
                 </div>
 
                 <div className="badge badge-top-left">

@@ -1,6 +1,9 @@
 import React from "react";
 import "./WhatIDo.css";
-import profileSrc from "../assets/pics/savedTJ.webp";
+import saved480 from "../assets/pics/savedTJ-480.webp";
+import saved768 from "../assets/pics/savedTJ-768.webp";
+import saved1200 from "../assets/pics/savedTJ-1200.webp";
+import savedFallback from "../assets/pics/savedTJ.png";
 
 export default function WhatIDo() {
   return (
@@ -35,7 +38,14 @@ export default function WhatIDo() {
 
           <div className="whatido-right">
             <div className="whatido-photo">
-              <img src={profileSrc} alt="profile" className="whatido-img" />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={`${saved480} 480w, ${saved768} 768w, ${saved1200} 1200w`}
+                  sizes="(max-width: 768px) 80vw, 300px"
+                />
+                <img src={savedFallback} alt="profile" className="whatido-img" />
+              </picture>
             </div>
           </div>
         </div>

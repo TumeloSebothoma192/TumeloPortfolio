@@ -5,10 +5,13 @@ import sharp from 'sharp';
 const projectRoot = path.resolve('./');
 const srcPics = path.join(projectRoot, 'src', 'assets', 'pics');
 
-const files = [
-  'savedTJ.png',
-  'Tumelo12.jpg'
+// files to process and responsive widths
+const images = [
+  { file: 'savedTJ.png', name: 'savedTJ' },
+  { file: 'Tumelo12.jpg', name: 'Tumelo12' },
 ];
+
+const widths = [480, 768, 1200];
 
 async function run() {
   if (!fs.existsSync(srcPics)) {
@@ -16,23 +19,31 @@ async function run() {
     process.exit(1);
   }
 
-  for (const file of files) {
-    const inPath = path.join(srcPics, file);
+  for (const img of images) {
+    const inPath = path.join(srcPics, img.file);
     if (!fs.existsSync(inPath)) {
       console.warn('Skipping missing file:', inPath);
       continue;
     }
 
-    const outName = file.replace(/\.(png|jpe?g)$/i, '.webp');
-    const outPath = path.join(srcPics, outName);
+    for (const w of widths) {
+      const outName = `${img.name}-${w}.webp`;
+      const outPath = path.join(srcPics, outName);
+      try {
+        await sharp(inPath).resize({ width: w }).webp({ quality: 80 }).toFile(outPath);
+        console.log('Wrote', outPath);
+      } catch (err) {
+        console.error('Failed to convert', inPath, '->', outPath, err);
+      }
+    }
 
+    // also write a default single webp (largest)
+    const defaultOut = path.join(srcPics, `${img.name}.webp`);
     try {
-      await sharp(inPath)
-        .webp({ quality: 80 })
-        .toFile(outPath);
-      console.log('Wrote', outPath);
+      await sharp(inPath).webp({ quality: 80 }).toFile(defaultOut);
+      console.log('Wrote default', defaultOut);
     } catch (err) {
-      console.error('Failed to convert', inPath, err);
+      console.error('Failed to write default webp for', inPath, err);
     }
   }
 }
