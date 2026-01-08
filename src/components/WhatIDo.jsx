@@ -44,7 +44,11 @@ export default function WhatIDo() {
                   srcSet={`${saved480} 480w, ${saved768} 768w, ${saved1200} 1200w`}
                   sizes="(max-width: 768px) 80vw, 300px"
                 />
-                <img src={savedFallback} alt="profile" className="whatido-img" />
+                <img
+                  src={savedFallback}
+                  alt="profile"
+                  className="whatido-img"
+                />
               </picture>
             </div>
           </div>

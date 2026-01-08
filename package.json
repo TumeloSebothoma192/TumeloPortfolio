@@ -8,8 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "optimize:images": "node ./scripts/optimize-images.js"
-    ,"optimize:images:responsive": "node ./scripts/optimize-images.js"
+    "optimize:images": "node ./scripts/optimize-images.js",
+    "optimize:images:responsive": "node ./scripts/optimize-images.js"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",

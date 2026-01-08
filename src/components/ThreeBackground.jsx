@@ -13,12 +13,19 @@ export default function ThreeBackground() {
 
     const init = async () => {
       const THREE = await import("three");
-      const { OrbitControls } = await import("three/examples/jsm/controls/OrbitControls.js");
+      const { OrbitControls } = await import(
+        "three/examples/jsm/controls/OrbitControls.js"
+      );
 
       if (!mounted) return;
 
       // camera
-      camera = new THREE.PerspectiveCamera(45, el.clientWidth / el.clientHeight, 1, 1000);
+      camera = new THREE.PerspectiveCamera(
+        45,
+        el.clientWidth / el.clientHeight,
+        1,
+        1000
+      );
       camera.position.set(0, 10, 40);
 
       // scene
@@ -46,7 +53,11 @@ export default function ThreeBackground() {
 
         const sphereGeo = new THREE.SphereGeometry(0.3, 12, 6);
         const sphereMat = new THREE.MeshBasicMaterial({ color });
-        if (sphereMat.color && typeof sphereMat.color.multiplyScalar === "function") sphereMat.color.multiplyScalar(1.6);
+        if (
+          sphereMat.color &&
+          typeof sphereMat.color.multiplyScalar === "function"
+        )
+          sphereMat.color.multiplyScalar(1.6);
         const sphere = new THREE.Mesh(sphereGeo, sphereMat);
         light.add(sphere);
 
@@ -57,7 +68,11 @@ export default function ThreeBackground() {
         texture.repeat.set(1, 4.5);
 
         const innerGeo = new THREE.SphereGeometry(2, 32, 8);
-        const innerMat = new THREE.MeshPhongMaterial({ side: THREE.DoubleSide, alphaMap: texture, alphaTest: 0.5 });
+        const innerMat = new THREE.MeshPhongMaterial({
+          side: THREE.DoubleSide,
+          alphaMap: texture,
+          alphaTest: 0.5,
+        });
         const inner = new THREE.Mesh(innerGeo, innerMat);
         inner.castShadow = true;
         inner.receiveShadow = true;
@@ -72,7 +87,12 @@ export default function ThreeBackground() {
       scene.add(pointLight2);
 
       const geometry = new THREE.BoxGeometry(30, 30, 30);
-      const material = new THREE.MeshPhongMaterial({ color: 0xb8c0c2, shininess: 10, specular: 0x111111, side: THREE.BackSide });
+      const material = new THREE.MeshPhongMaterial({
+        color: 0xb8c0c2,
+        shininess: 10,
+        specular: 0x111111,
+        side: THREE.BackSide,
+      });
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.y = 10;
       mesh.receiveShadow = true;
@@ -128,7 +148,8 @@ export default function ThreeBackground() {
         if (renderer) {
           renderer.setAnimationLoop(null);
           renderer.dispose();
-          if (el.contains(renderer.domElement)) el.removeChild(renderer.domElement);
+          if (el.contains(renderer.domElement))
+            el.removeChild(renderer.domElement);
         }
         if (controls) controls.dispose();
       };

@@ -76,7 +76,11 @@ export default function Hero() {
                       srcSet={`${profile480} 480w, ${profile768} 768w, ${profile1200} 1200w`}
                       sizes="(max-width: 768px) 80vw, 300px"
                     />
-                    <img src={profileFallback} alt="Tumelo Sebothoma" className="profile-img" />
+                    <img
+                      src={profileFallback}
+                      alt="Tumelo Sebothoma"
+                      className="profile-img"
+                    />
                   </picture>
                 </div>
 

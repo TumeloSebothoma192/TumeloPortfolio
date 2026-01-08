@@ -8,16 +8,20 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-            manualChunks(id) {
-              if (!id) return;
-              if (id.includes("node_modules")) {
-                if (id.includes("three/examples") || id.includes("three/examples/jsm")) return "vendor-three-examples";
-                if (id.includes("three")) return "vendor-three";
-                if (id.includes("react")) return "vendor-react";
-                return "vendor";
-              }
-              if (id.includes("/src/components/ThreeBackground")) return "three-bg";
-            },
+        manualChunks(id) {
+          if (!id) return;
+          if (id.includes("node_modules")) {
+            if (
+              id.includes("three/examples") ||
+              id.includes("three/examples/jsm")
+            )
+              return "vendor-three-examples";
+            if (id.includes("three")) return "vendor-three";
+            if (id.includes("react")) return "vendor-react";
+            return "vendor";
+          }
+          if (id.includes("/src/components/ThreeBackground")) return "three-bg";
+        },
       },
     },
   },
