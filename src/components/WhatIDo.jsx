@@ -1,6 +1,6 @@
 import React from "react";
 import "./WhatIDo.css";
-import profileSrc from "../assets/pics/savedTJ.png";
+import profileSrc from "../assets/pics/savedTJ.webp";
 
 export default function WhatIDo() {
   return (

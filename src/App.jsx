@@ -1,14 +1,14 @@
-import { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import "./App.css";
 import Hero from "./components/Hero";
-import ThreeBackground from "./components/ThreeBackground";
+const ThreeBackground = lazy(() => import("./components/ThreeBackground"));
 import Nav from "./components/Nav";
 import WhatIDo from "./components/WhatIDo";
 import Experience from "./components/Experience";
 import TrustedBrands from "./components/TrustedBrands";
-import CaseStudies from "./components/ProjectsCarousel";
+const CaseStudies = lazy(() => import("./components/ProjectsCarousel"));
 import CommunityImpact from "./components/CommunityImpact";
-import Testimonials from "./components/Testimonials";
+const Testimonials = lazy(() => import("./components/Testimonials"));
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
@@ -17,13 +17,19 @@ function App() {
 
   return (
     <>
-      <ThreeBackground />
+      <Suspense fallback={null}>
+        <ThreeBackground />
+      </Suspense>
       <Hero />
       <WhatIDo />
       <Experience />
-      <CaseStudies />
+      <Suspense fallback={null}>
+        <CaseStudies />
+      </Suspense>
       <CommunityImpact />
-      <Testimonials />
+      <Suspense fallback={null}>
+        <Testimonials />
+      </Suspense>
       <ContactSection />
       <Footer />
       <Nav />

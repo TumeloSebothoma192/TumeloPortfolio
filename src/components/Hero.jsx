@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import "../App.css";
 import "./Hero.css";
-import profileSrc from "../assets/pics/Tumelo12.jpg";
+import profileSrc from "../assets/pics/Tumelo12.webp";
 
 export default function Hero() {
   const stackRef = useRef(null);
