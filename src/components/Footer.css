@@ -1,7 +1,10 @@
 .site-footer {
   padding: 28px 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   margin-top: 40px;
+  position: relative;
+  z-index: 35; /* ensure footer sits above background layers */
+  background: transparent;
 }
 .site-footer .inner {
   max-width: 1100px;
@@ -30,10 +33,18 @@
   margin-left: 14px;
   text-decoration: none;
 }
+/* improve visibility on small screens */
+.site-footer .mini-nav a {
+  color: var(--muted);
+  opacity: 0.95;
+}
 @media (max-width: 700px) {
   .site-footer .inner {
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
   }
+  .site-footer .inner { align-items: center; text-align: center; }
+  .site-footer .copyright { margin-left: 0; }
+  .mini-nav a { margin-left: 8px; }
 }
