@@ -44,7 +44,11 @@ export default function Hero() {
               I turn complex ideas into simple, scalable design solutions.
             </p>
             <div className="hero-cta">
-              <a className="btn primary" href="/resume.pdf" download>
+              <a
+                className="btn primary"
+                href="/src/assets/Professional Resume.pdf"
+                download="Professional Resume.pdf"
+              >
                 View Resume
               </a>
               <a
