@@ -46,7 +46,7 @@ export default function Hero() {
             <div className="hero-cta">
               <a
                 className="btn primary"
-                href="/src/assets/Professional Resume.pdf"
+                href="/src/assets/ProfessionalResume.pdf"
                 download="Professional Resume.pdf"
               >
                 View Resume
