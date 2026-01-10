@@ -46,7 +46,7 @@ export default function Hero() {
             <div className="hero-cta">
               <a
                 className="btn primary"
-                href="https://drive.google.com/file/d/1e8AtNzx2fAHXSmg4MYtfcytq9ZwVFpy7/view?usp=drivesdk"
+                href="https://1drv.ms/b/c/d44fffd1e2bca4e7/IQC94sffw3JbS5yoiFstHllgAfzUefxNxZWWWZL699-i6Bw"
                 download="Professional Resume.pdf"
               >
                 View Resume
